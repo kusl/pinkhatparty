@@ -1,7 +1,7 @@
 Example PHP project
 ===================
 
-[![Build Status](https://travis-ci.org/openroom/phpci.svg?branch=master)](https://travis-ci.org/openroom/phpci)
+[![Build Status](https://travis-ci.org/kusl/pinkhatparty.svg?branch=master)](https://travis-ci.org/kusl/pinkhatparty)
 
 Source
 ------
