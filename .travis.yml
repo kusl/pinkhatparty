@@ -7,6 +7,7 @@ php:
   - 7.0
   # aliased to a recent 7.1 version
   - 7.1
+  - 7.2
 
 # optionally specify a list of environments, for example to test different RDBMS
 env:
@@ -21,8 +22,6 @@ test:
 # optionally set up exclusions and allowed failures in the matrix
 matrix:
   allow_failures:
-    - php: 7.0
-    - php: 7.1
     - php: 7.2
 
 # execute any number of scripts before the test run, custom env's are available as variables
