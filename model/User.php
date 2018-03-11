@@ -35,6 +35,9 @@ class User
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function getIsBanned(): bool
     {
         return $this->isBanned;
@@ -46,6 +49,9 @@ class User
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function getIsReporter(): bool
     {
         return $this->isReporter;
@@ -57,6 +63,9 @@ class User
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function getIsAdministrator(): bool
     {
         return $this->isAdministrator;
@@ -68,7 +77,10 @@ class User
         return $this;
     }
 
-    public function getDisplayName()
+    /**
+     * @return string
+     */
+    public function getDisplayName(): string
     {
         return $this->displayName;
     }
@@ -83,7 +95,10 @@ class User
         return $this;
     }
 
-    public function getUsername()
+    /**
+     * @return string
+     */
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -94,6 +109,9 @@ class User
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getPassword(): string
     {
         return $this->password;
@@ -105,7 +123,10 @@ class User
         return $this;
     }
 
-    public function getEmail()
+    /**
+     * @return string
+     */
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -116,7 +137,10 @@ class User
         return $this;
     }
 
-    public function getLastLogin()
+    /**
+     * @return \DateTime
+     */
+    public function getLastLogin(): \DateTime
     {
         return $this->lastLogin;
     }
