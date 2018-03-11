@@ -1,0 +1,46 @@
+# Select image from https://hub.docker.com/_/php/
+image: php:latest
+
+# Select what we should cache
+cache:
+  paths:
+  - vendor/
+
+before_script:
+# Install git, the php image doesn't have installed
+- apt-get update -yqq
+- apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
+- apt-get install git -yqq
+
+# Install mysql driver
+- docker-php-ext-install pdo_mysql
+- docker-php-ext-install pdo_pgsql
+
+# Install composer
+- curl -sS https://getcomposer.org/installer | php
+
+# Install all project dependencies
+- php composer.phar install
+- php composer.phar update
+- pecl install xdebug
+- docker-php-ext-enable xdebug
+- php -v
+
+services:
+- postgres
+
+variables:
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_DB: hello_world_test
+
+test:php7:postgresql:
+  image: php:latest
+  script:
+  - vendor/bin/phpunit --configuration phpunit_pgsql.xml --coverage-text
+
+test:php70:postgresql:
+  image: php:7.0
+  script:
+  - vendor/bin/phpunit --configuration phpunit_pgsql.xml --coverage-text
+  allow_failure: true
