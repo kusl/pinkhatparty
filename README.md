@@ -13,4 +13,4 @@ To run unit tests locally,
 * go to your project folder 
 * run something like vendor/bin/phpunit --configuration phpunit_pgsqllocal.xml --coverage-text 
 
-enjoy!
+Enjoy!
