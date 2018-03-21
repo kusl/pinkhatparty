@@ -32,6 +32,9 @@ class UserTest extends \PHPUnit\Framework\TestCase
         $this->pdo->query("DROP TABLE users");
     }
 
+    /**
+     *
+     */
     public function testCreateAdminUser()
     {
         $tableName = 'users';
